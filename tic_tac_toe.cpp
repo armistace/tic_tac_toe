@@ -10,6 +10,7 @@ int choose_position()
     cout <<"1 2 3\n4 5 6\n7 8 9";
     cout <<"Position: ";
     cin >> x;
+    return x;
 }
 
 //This function will draw the board on the screen for the user to see what is available
@@ -65,4 +66,16 @@ bool win_condition(char current_board[8])
 }
 
 //function to check if position is taken
-bool position_check ()
+//It will return true IF THE POSITION IS TAKEN!
+bool position_check (current_board[8], int choice)
+{
+    if (current_board[choice = 1] != ".")
+    {
+	return true;
+    }
+    else
+    {
+	return false;
+    }
+}
+
