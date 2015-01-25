@@ -67,7 +67,7 @@ bool win_condition(char current_board[8])
 
 //function to check if position is taken
 //It will return true IF THE POSITION IS TAKEN!
-bool position_check (current_board[8], int choice)
+bool position_taken (current_board[8], int choice)
 {
     if (current_board[choice = 1] != ".")
     {
@@ -79,3 +79,29 @@ bool position_check (current_board[8], int choice)
     }
 }
 
+//Random AI
+//Generates a random number between 0 and 8 and returns it
+int random_ai()
+{
+    int x;
+    //generate random seed
+    srand (time(NULL));
+    
+    //Generate Random number between 0 and 9
+    x = rand() % 10;
+    
+    //This ensures that 9 is discarded as it does not make sense on the board
+    while (x == 9)
+    {
+	x = rand() % 10;
+    }
+    
+    return x;
+}
+    
+    
+
+//Unbeatable AI
+
+
+//User Intro
