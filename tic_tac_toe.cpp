@@ -93,6 +93,9 @@ int random_ai()
     //This ensures that 9 is discarded as it does not make sense on the board
     while (x == 9)
     {
+	//Need to generate a new seed each time to ensure a different number
+	//if 9 is chosen above
+	srand(time(NULL));
 	x = rand() % 10;
     }
     
