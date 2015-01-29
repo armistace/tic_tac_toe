@@ -120,7 +120,7 @@ int random_ai()
 //returns the literal board position as int not the array posistion
 int unbeatable_ai(char current_board[8])
 {
-    
+    //Horizontal check
     if (current_board[0] == current_board[1] && !position_taken(current_board, 3))
     {
         return 3;
@@ -137,12 +137,31 @@ int unbeatable_ai(char current_board[8])
     {
         return 6;
     }
-        
-        
-    return 5;
+    else if (current_board[4] == current_board[5] && !position_taken(current_board, 4))
+    {
+	return 4;
+    }
+    else if (current_board[3] == current_board[5] && !position_taken(current_board, 5))
+    {
+	return 5;
+    }
+    else if (current_board[6] == current_board[7] && !position_taken(current_board, 9))
+    {
+	return 9;
+    }
+    else if (current_board[6] == current_board[8] && !position_taken(current_board, 8))
+    {
+	return 8;
+    }
+    else if (current_board[7] == current_board[8] && !position_taken(current_board, 7))
+    {
+	return 7;
+    }
+    //Vertical Check
+    //Diagonal Check
     
 }
 //User Intro
 void user_intro()
 {
-    
+}    
