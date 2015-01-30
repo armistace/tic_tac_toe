@@ -158,6 +158,15 @@ int unbeatable_ai(char current_board[8])
 	return 7;
     }
     //Vertical Check
+    else if (current_board[0] == current_board[3] && !position_taken(current_board, 7))
+    {
+	return 7;
+    }
+    else if (current_board[3] == current_exception[6] && !position_taken(current_board, 1))
+    {
+	return 1;
+    }
+    
     //Diagonal Check
     
 }
