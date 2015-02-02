@@ -121,6 +121,7 @@ int random_ai()
 int unbeatable_ai(char current_board[8])
 {
     //Horizontal check
+    //Line 1
     if (current_board[0] == current_board[1] && !position_taken(current_board, 3))
     {
         return 3;
@@ -133,6 +134,7 @@ int unbeatable_ai(char current_board[8])
     {
         return 2;
     }
+    //Line 2
     else if (current_board[3] == current_board[4] && !position_taken(current_board, 6))
     {
         return 6;
@@ -145,6 +147,7 @@ int unbeatable_ai(char current_board[8])
     {
 	return 5;
     }
+    //Line 3
     else if (current_board[6] == current_board[7] && !position_taken(current_board, 9))
     {
 	return 9;
@@ -158,16 +161,72 @@ int unbeatable_ai(char current_board[8])
 	return 7;
     }
     //Vertical Check
+    //Line 1
     else if (current_board[0] == current_board[3] && !position_taken(current_board, 7))
     {
 	return 7;
     }
-    else if (current_board[3] == current_exception[6] && !position_taken(current_board, 1))
+    else if (current_board[3] == current_board[6] && !position_taken(current_board, 1))
     {
 	return 1;
     }
-    
+    else if (current_board[0] == current_board[6] && !position_taken(current_board, 4))
+    {
+	return 4;
+    }
+    //Line 2
+    else if (current_board[1] == current_board[4] && !position_taken(current_board, 8))
+    {
+	return 8;
+    }
+    else if (current_board[4] == current_board[7] && !position_taken(current_board, 2))
+    {
+	return 2;
+    }
+    else if (current_board[1] == current_board[7] && !position_taken(current_board, 5))
+    {
+	return 5;
+    }
+    //Line 3
+    else if (current_board[2] == current_board[5] && !position_taken(current_board, 9))
+    {
+	return 9;
+    }
+    else if (current_board[5] == current_board[8] && !position_taken(current_board, 3))
+    {
+	return 3;
+    }
+    else if (current_board[2] == current_board[8] && !position_taken(current_board, 6))
+    {
+	return 6;
+    }
     //Diagonal Check
+    //line 1
+    else if (current_board[0] == current_board[4] && !position_taken(current_board, 9))
+    {
+	return 9;
+    }
+    else if (current_board[4] == current_board[8] && !position_taken(current_board, 1))
+    {
+	return 1;
+    }
+    else if (current_board[0] == current_board[8] && !position_taken(current_board, 5))
+    {
+	return 5;
+    }
+    //Line 2
+    else if (current_board[2] == current_board[4] && !position_taken(current_board, 7))
+    {
+	return 7;
+    }
+    else if (current_board[4] == current_board[6] && !position_taken(current_board, 3))
+    {
+	return 3;
+    }
+    else if (current_board[2] == current_exception[6] && !position_taken(current_board, 5))
+    {
+	return 5;
+    }
     
 }
 //User Intro
