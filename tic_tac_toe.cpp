@@ -223,7 +223,7 @@ int unbeatable_ai(char current_board[8])
     {
 	return 3;
     }
-    else if (current_board[2] == current_exception[6] && !position_taken(current_board, 5))
+    else if (current_board[2] == current_board[6] && !position_taken(current_board, 5))
     {
 	return 5;
     }
@@ -232,4 +232,17 @@ int unbeatable_ai(char current_board[8])
 //User Intro
 void user_intro()
 {
+    cout <<".............................................................\n";
+    cout << "\n";
+    cout <<"Welcome!\n";
+    cout <<"This is Tic Tac Toe\n";
+    cout <<"Written by armistace\n";
+    cout <<"\n";
+    cout <<".............................................................\n";
+    cout <<"\n";
 }    
+
+int main()
+{
+    user_intro();
+}
