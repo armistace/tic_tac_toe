@@ -1,0 +1,3 @@
+[Project]
+Manager=KDevCMakeManager
+Name=tic_tac_toe

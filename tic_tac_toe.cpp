@@ -8,9 +8,10 @@ int choose_position()
 {
     int x;
     cout <<"Please Select A corresponding Position on the Grid\n";
-    cout <<"1 2 3\n4 5 6\n7 8 9";
+    cout <<"1 2 3\n4 5 6\n7 8 9\n";
     cout <<"Position: ";
     cin >> x;
+    cout << "\n";
     return x;
 }
 
@@ -244,5 +245,47 @@ void user_intro()
 
 int main()
 {
+    bool wincheck = false;
+    char current_board[8];
+    int user_choice;
+    int ai_choice;
+    
+    for (int x = 0; x < 9; x++)
+    {
+	current_board[x] = '.';
+    }
+    
     user_intro();
+    draw_board(current_board);
+    
+    while (!wincheck)
+    {
+
+	user_choice = choose_position();
+	while (position_taken(current_board, user_choice) == true)
+	{
+	    user_choice = choose_position();
+	}
+	current_board[user_choice] = 'X';
+	
+	draw_board(current_board);
+	
+	cout << "AI is now thinking";
+	ai_choice = random_ai();
+	while (position_taken(current_board, ai_choice) == true)
+	{
+	    ai_choice = random_ai();
+	}
+	current_board[ai_choice] = 'O';
+	
+	draw_board(current_board);
+	
+	wincheck = win_condition(current_board);
+    }
+    
+    
+    
+    
+   
+    
 }
