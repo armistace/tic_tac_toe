@@ -224,12 +224,14 @@ int unbeatable_ai(char current_board[8])
     {
 	return 3;
     }
-    else if (current_board[2] == current_board[6] && !position_taken(current_board, 5))
+    //to get rid of a compiler warning I need an else, as the only viable option now is 5 that is what we will return
+    else
     {
 	return 5;
     }
     
 }
+
 //User Intro
 void user_intro()
 {
@@ -266,7 +268,7 @@ int main()
 	{
 	    user_choice = choose_position();
 	}
-	current_board[user_choice] = 'X';
+	current_board[user_choice - 1] = 'X';
 	
 	draw_board(current_board);
 	
@@ -276,11 +278,19 @@ int main()
 	{
 	    ai_choice = random_ai();
 	}
-	current_board[ai_choice] = 'O';
+	current_board[ai_choice - 1] = 'O';
 	
 	draw_board(current_board);
 	
 	wincheck = win_condition(current_board);
+	if (wincheck == true)
+	{
+	    cout << "true";
+	}
+	else
+	{
+	    cout << "false";
+	}
     }
     
     
