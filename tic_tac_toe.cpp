@@ -245,7 +245,7 @@ void user_intro()
     cout <<"\n";
 }    
 
-int main()
+void game()
 {
     bool wincheck = false;
     char current_board[8];
@@ -263,39 +263,98 @@ int main()
     while (!wincheck)
     {
 
-	user_choice = choose_position();
-	while (position_taken(current_board, user_choice) == true)
-	{
-	    user_choice = choose_position();
+		user_choice = choose_position();
+		while (position_taken(current_board, user_choice) == true)
+		{
+			user_choice = choose_position();
+		}
+		current_board[user_choice - 1] = 'X';
+	
+		draw_board(current_board);
+	
+		cout << "AI is now thinking";
+		ai_choice = random_ai();
+		while (position_taken(current_board, ai_choice) == true)
+		{
+			ai_choice = random_ai();
+		}
+		current_board[ai_choice - 1] = 'O';
+	
+		draw_board(current_board);
+	
+		wincheck = win_condition(current_board);
+		if (wincheck == true)
+		{
+			cout << "true";
+		}
+		else
+		{
+			cout << "false";
+		}
 	}
-	current_board[user_choice - 1] = 'X';
+    
+}
+
+//char* win_board_builder()
+//{
+	//char current_board[8];
 	
-	draw_board(current_board);
+	//for (int x = 3; x < 9; x += 2)
+	//{
+		//current_board[x] = 'O';
+	//}
 	
-	cout << "AI is now thinking";
-	ai_choice = random_ai();
-	while (position_taken(current_board, ai_choice) == true)
+	//for (int x = 4; x < 9; x += 2)
+	//{
+		//current_board[x] = 'X';
+	//}
+	
+	//for (int x = 0; x < 3; x++)
+	//{
+		//current_board[x] = 'X';
+	//}
+	
+	//cout << "current_board as built by win_board_builder: \n";
+	//cout <<"\n";
+	//cout << current_board[0] << " " << current_board[1] << " " << current_board[2] << "\n";
+	//cout << current_board[3] << " " << current_board[4] << " " << current_board[5] << "\n";
+	//cout << current_board[6] << " " << current_board[7] << " " << current_board[8] << "\n";
+	
+	//return current_board;
+//}
+
+int main()
+{
+	char current_board[8];
+	
+	for (int x = 3; x < 9; x += 2)
 	{
-	    ai_choice = random_ai();
+		current_board[x] = 'O';
 	}
-	current_board[ai_choice - 1] = 'O';
 	
-	draw_board(current_board);
-	
-	wincheck = win_condition(current_board);
-	if (wincheck == true)
+	for (int x = 4; x < 9; x += 2)
 	{
-	    cout << "true";
+		current_board[x] = 'X';
+	}
+	
+	for (int x = 0; x < 3; x++)
+	{
+		current_board[x] = 'X';
+	}
+	
+	cout << "current_board as built by win_board_builder: \n";
+	cout <<"\n";
+	cout << current_board[0] << " " << current_board[1] << " " << current_board[2] << "\n";
+	cout << current_board[3] << " " << current_board[4] << " " << current_board[5] << "\n";
+	cout << current_board[6] << " " << current_board[7] << " " << current_board[8] << "\n";
+	
+	if (win_condition(current_board) == false)
+	{
+		cout << "win_condition returned false";
 	}
 	else
 	{
-	    cout << "false";
+		cout << "win condition returned true";
 	}
-    }
-    
-    
-    
-    
-   
-    
 }
+
