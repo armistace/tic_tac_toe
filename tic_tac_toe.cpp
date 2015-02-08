@@ -30,35 +30,35 @@ bool win_condition(char current_board[8])
 {
     bool won;
     
-    if (current_board[0] == current_board[1] && current_board[0] == current_board[2] && current_board[1] == current_board[2])
+    if (current_board[0] == current_board[1] && current_board[0] == current_board[2] && current_board[1] == current_board[2] && current_board[0] != '.')
     {
         won = true;
     }
-    else if (current_board[3] == current_board[4] && current_board[3] == current_board[5] && current_board[4] == current_board[5])
+    else if (current_board[3] == current_board[4] && current_board[3] == current_board[5] && current_board[4] == current_board[5] && current_board[3] != '.')
     {
         won = true;
     }
-    else if (current_board[6] == current_board[7] && current_board[6] == current_board[8] && current_board[7] == current_board[8])
+    else if (current_board[6] == current_board[7] && current_board[6] == current_board[8] && current_board[7] == current_board[8] && current_board[7] !='.')
     {
         won = true;
     }
-    else if (current_board[0] == current_board[3] && current_board[0] == current_board[6] && current_board[3] == current_board[6])
+    else if (current_board[0] == current_board[3] && current_board[0] == current_board[6] && current_board[3] == current_board[6] && current_board[0] != '.')
     {
         won = true;
     }
-    else if (current_board[1] == current_board[4] && current_board[1] == current_board[7] && current_board[4] == current_board[7])
+    else if (current_board[1] == current_board[4] && current_board[1] == current_board[7] && current_board[4] == current_board[7] && current_board[4] != '.')
     {
         won = true;
     }
-    else if (current_board[2] == current_board[5] && current_board[2] == current_board[8] && current_board[5] == current_board[8])
+    else if (current_board[2] == current_board[5] && current_board[2] == current_board[8] && current_board[5] == current_board[8] && current_board[5] != '.')
     {
         won = true;
     }
-    else if (current_board[0] == current_board[4] && current_board[0] == current_board[8] && current_board[4] == current_board[8])
+    else if (current_board[0] == current_board[4] && current_board[0] == current_board[8] && current_board[4] == current_board[8] && current_board[8] != '.')
     {
         won = true;
     }
-    else if (current_board[2] == current_board[4] && current_board[2] == current_board[6] && current_board[4] == current_board[6])
+    else if (current_board[2] == current_board[4] && current_board[2] == current_board[6] && current_board[4] == current_board[6] && current_board[6] != '.')
     {
         won = true;
     }
